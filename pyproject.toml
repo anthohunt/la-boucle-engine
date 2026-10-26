@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "la-boucle-engine"
+version = "0.1.0"
+description = "La boucle: a researcher agent improves a harness on a training set, a sealed exam decides."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Anthony Hunt" }]
+dependencies = []
+
+[tool.setuptools]
+packages = ["boucle"]

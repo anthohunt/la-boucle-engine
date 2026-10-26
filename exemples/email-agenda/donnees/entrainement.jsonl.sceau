@@ -1,0 +1,13 @@
+{
+  "empreinte": "ed1501b0c27c64d27853bf0f561fa529adc38f75f656a6fccb6074b39ba0d340",
+  "nombre": 84,
+  "par_critere": {
+    "ambigu": 14,
+    "hostile": 14,
+    "multiple": 14,
+    "net": 14,
+    "piege": 14,
+    "vide": 14
+  },
+  "scelle_le": "2026-10-26T15:28:51+00:00"
+}

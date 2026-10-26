@@ -1,0 +1,16 @@
+{
+  "nom": "email-agenda",
+  "banc": {"entrainement": "donnees/entrainement.jsonl", "examen": "donnees/examen.jsonl"},
+  "harnais_depart": "harnais-0",
+  "sujet": {"commande": ["python3", "sujet.py", "--lot"], "timeout_s": 60, "mode": "lot"},
+  "comparateur": {"fichier": "comparateur.py", "options": {}},
+  "chercheur": {"commande": ["python3", "chercheur.py"], "timeout_s": 900},
+  "charte": "charte.md",
+  "parallelisme": 4,
+  "largeur": 3,
+  "tours_niveau1_max": 4,
+  "passes_max": 6,
+  "paliers": {"mode": "fixes", "valeurs": [20, 40, 60, 80, 100]},
+  "examen": {"gain_min": 5.0, "echecs_max": 2, "confirmation": true},
+  "objectif": {"examen_min": 95.0}
+}

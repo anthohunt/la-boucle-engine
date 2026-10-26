@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.juge/
+noeuds/
+etat.json
+journal.jsonl
+PAUSE.md
+tableau.html
+*.egg-info/
+build/
+dist/

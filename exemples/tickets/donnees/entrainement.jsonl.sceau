@@ -1,0 +1,12 @@
+{
+  "empreinte": "143e3a3da74b0b0bcaeeda5b1591c1fe9d0a57bda497df152b6952a094005a71",
+  "nombre": 60,
+  "par_critere": {
+    "hostile": 12,
+    "negation": 12,
+    "panne": 12,
+    "question": 12,
+    "vague": 12
+  },
+  "scelle_le": "2026-10-26T15:22:14+00:00"
+}
