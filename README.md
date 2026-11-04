@@ -22,12 +22,12 @@ so you can see the whole loop without an API key.
 > Code identifiers and comments are in French (the project's origin), the documentation is in English.
 
 ## What you get
-• **Benches** as JSONL, sealed by a SHA-256 fingerprint; a changed exam is refused.
-• **Three outcomes per case** (right / tolerated error / forbidden error), categories with equal weight.
-• **A tree of attempts** with early pruning (a Hoeffding bound valid at every look), steps (*paliers*), families of ideas with stuck-family detection and a plateau alarm.
-• **An exam gate**: paired comparison with the best version, minimum gain, a second confirming run, no more forbidden errors.
-• **Pause after two exam failures**; resumable state; a journal of every step; a static HTML dashboard.
-• Method notes in [`docs/method.md`](docs/method.md); public interface in [`docs/interface.md`](docs/interface.md); chantier settings in [`docs/chantier.md`](docs/chantier.md).
+- **Benches** as JSONL, sealed by a SHA-256 fingerprint; a changed exam is refused.
+- **Three outcomes per case** (right / tolerated error / forbidden error), categories with equal weight.
+- **A tree of attempts** with early pruning (a Hoeffding bound valid at every look), steps (*paliers*), families of ideas with stuck-family detection and a plateau alarm.
+- **An exam gate**: paired comparison with the best version, minimum gain, a second confirming run, no more forbidden errors.
+- **Pause after two exam failures**; resumable state; a journal of every step; a static HTML dashboard.
+- Method notes in [`docs/method.md`](docs/method.md); public interface in [`docs/interface.md`](docs/interface.md); chantier settings in [`docs/chantier.md`](docs/chantier.md).
 
 ## Install
 ```bash
@@ -80,10 +80,10 @@ tests/         unit and end-to-end tests (stand-in subjects and researchers)
 ```
 
 ## Limits (read before trusting a number)
-• The exam is hidden by convention, not by a sandbox: run an untrusted researcher in a container.
-• A good exam mark means "generalises to an exam like this one". Rebuild the exam when the real traffic changes.
-• The examples are small and synthetic, written to show the mechanics, not to benchmark anything.
-• This is a first public version (0.1.0); the interfaces may still change.
+- The exam is hidden by convention, not by a sandbox: run an untrusted researcher in a container.
+- A good exam mark means "generalises to an exam like this one". Rebuild the exam when the real traffic changes.
+- The examples are small and synthetic, written to show the mechanics, not to benchmark anything.
+- This is a first public version (0.1.0); the interfaces may still change.
 
 ## Licences
 Code: Apache License 2.0 ([`LICENSE`](LICENSE), [`NOTICE`](NOTICE)). Documentation, example data and charters: CC BY 4.0
