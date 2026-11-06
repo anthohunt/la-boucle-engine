@@ -49,7 +49,7 @@ Typical outcome: the exam mark climbs from 42 to the high 80s or 90s over severa
 
 ## Run it with a real AI researcher
 `exemples/email-agenda/` is a second case (mails → appointments, six categories: clear, empty, trap,
-multiple, ambiguous, hostile). Its researcher calls [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
+multiple, ambiguous, hostile). Its researcher calls [Claude Code](https://code.claude.com/docs/en/overview)
 in print mode, which is a paid product subject to Anthropic's terms:
 ```bash
 cp -r exemples/email-agenda /tmp/mails && cd /tmp/mails
@@ -89,3 +89,7 @@ tests/         unit and end-to-end tests (stand-in subjects and researchers)
 Code: Apache License 2.0 ([`LICENSE`](LICENSE), [`NOTICE`](NOTICE)). Documentation, example data and charters: CC BY 4.0
 ([`LICENSE-docs`](LICENSE-docs)). No third-party code is included; no runtime dependency.
 Inspiration (no code copied): [karpathy/autoresearch](https://github.com/karpathy/autoresearch) (MIT).
+
+---
+
+**Anthony Hunt** · [Project page on ingevision.cloud](https://ingevision.cloud/?lang=en&p=boucle) · [LinkedIn](https://www.linkedin.com/in/anthony-hunt-3948a9196) · [GitHub profile](https://github.com/anthohunt)
