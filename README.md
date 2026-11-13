@@ -45,6 +45,8 @@ PYTHONPATH=<path to this repository> python3 -m boucle verifier chantier.json
 PYTHONPATH=<path to this repository> python3 -m boucle run chantier.json      # exit 0 = goal reached
 PYTHONPATH=<path to this repository> python3 -m boucle tableau chantier.json  # writes tableau.html
 ```
+On Windows, use `python` instead of `python3` and a folder of your choice instead of `/tmp`; the engine runs the example's `python3` commands with its own interpreter.
+
 Typical outcome: the exam mark climbs from 42 to the high 80s or 90s over several passes. The path varies from run to run (the early-pruning order is random): in the installation proof of this repository (6 passes) it ended at 88 with "passes exhausted" (exit code 4); in other runs it reached the goal of 90 (exit code 0). `journal.jsonl` has one line per step.
 
 ## Run it with a real AI researcher
@@ -66,9 +68,11 @@ real-model run has **not** been performed for this repository: only the surround
 4. Write the researcher command (and a charter for it).
 5. `python3 -m boucle verifier chantier.json`, then `run`.
 
-## Related repositories (planned)
-`la-boucle-module` (a Claude Code module that drives a chantier step by step), `la-boucle-methode` (skills that teach the method
-to an agent), `mission-loop` (a goal-driven iteration skill), `la-boucle-cas-jeu-de-plis` (a case study on a card-game bot).
+## Related repositories
+- [`la-boucle-module`](https://github.com/anthohunt/la-boucle-module): a Claude Code module that drives a chantier step by step.
+- [`la-boucle-methode`](https://github.com/anthohunt/la-boucle-methode): skills that teach the method to an agent.
+- [`mission-loop`](https://github.com/anthohunt/mission-loop): a goal-driven iteration skill.
+
 They depend on this engine and do not copy it.
 
 ## Layout

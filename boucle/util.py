@@ -3,6 +3,7 @@
 import hashlib
 import json
 import os
+import sys
 import tempfile
 from datetime import datetime, timezone
 
@@ -76,3 +77,20 @@ def empreinte_dossier(dossier):
                 h.update(f.read())
             h.update(b"\0")
     return h.hexdigest()
+
+
+def commande_portable(commande):
+    """On Windows, "python3" is often missing or a Store stub: run the same interpreter as the engine instead.
+    Elsewhere the command is left as written."""
+    commande = list(commande)
+    if os.name == "nt" and commande and commande[0] in ("python3", "python"):
+        commande[0] = sys.executable
+    return commande
+
+
+def env_enfant(env=None):
+    """Children speak UTF-8 on every platform (Windows pipes default to the local code page)."""
+    env = dict(os.environ if env is None else env)
+    env.setdefault("PYTHONUTF8", "1")
+    env.setdefault("PYTHONIOENCODING", "utf-8")
+    return env

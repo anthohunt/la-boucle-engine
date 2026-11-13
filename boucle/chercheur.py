@@ -24,7 +24,7 @@ import os
 import shutil
 import subprocess
 
-from .util import ecrire_json, empreinte_dossier, lire_json
+from .util import commande_portable, ecrire_json, empreinte_dossier, env_enfant, lire_json
 
 
 def preparer_sortie(parent, sortie):
@@ -58,11 +58,13 @@ def lancer(chantier, parent, sortie, fautes, notes, index, impasse, familles, di
     sortie_cmd = {"ok": False, "famille": "non-declaree", "idee": "", "justification": None, "change": False, "erreur": None}
     try:
         r = subprocess.run(
-            chantier["chercheur"]["commande"],
-            env=env,
+            commande_portable(chantier["chercheur"]["commande"]),
+            env=env_enfant(env),
             cwd=chantier["racine"],
             capture_output=True,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             timeout=chantier["chercheur"]["timeout_s"],
         )
         if r.returncode != 0:

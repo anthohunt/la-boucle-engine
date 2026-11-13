@@ -19,7 +19,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 from . import banc, bareme, comparateurs
 from .chantier import chemin as chemin_chantier
-from .util import ecrire_json, empreinte_dossier, lire_json
+from .util import commande_portable, ecrire_json, empreinte_dossier, env_enfant, lire_json
 
 
 class Juge:
@@ -36,10 +36,13 @@ class Juge:
         demande = json.dumps({"harnais": os.path.abspath(harnais), "entree": entree}, ensure_ascii=False)
         try:
             r = subprocess.run(
-                self.c["sujet"]["commande"],
+                commande_portable(self.c["sujet"]["commande"]),
                 input=demande,
                 capture_output=True,
                 text=True,
+                encoding="utf-8",
+                errors="replace",
+                env=env_enfant(),
                 timeout=self.c["sujet"]["timeout_s"],
                 cwd=self.c["racine"],
             )
@@ -60,7 +63,8 @@ class Juge:
         stdin: one JSON per line {"id","harnais","entree"}; stdout: one JSON per line {"id","proposition"}."""
         demande = "\n".join(json.dumps({"id": c["id"], "harnais": os.path.abspath(harnais), "entree": c["entree"]}, ensure_ascii=False) for c in groupe) + "\n"
         try:
-            r = subprocess.run(self.c["sujet"]["commande"], input=demande, capture_output=True, text=True,
+            r = subprocess.run(commande_portable(self.c["sujet"]["commande"]), input=demande, capture_output=True, text=True,
+                               encoding="utf-8", errors="replace", env=env_enfant(),
                                timeout=self.c["sujet"]["timeout_s"], cwd=self.c["racine"])
             if r.returncode != 0:
                 return {}
